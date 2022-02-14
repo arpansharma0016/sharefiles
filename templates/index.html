@@ -1,0 +1,294 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'modal/modal.css' %}">
+    <link rel="stylesheet" href="{% static 'index.css' %}">
+    <link href="https://fonts.googleapis.com/css?family=DM+Sans:400,500,700&display=swap" rel="stylesheet">
+    <link rel="icon" href="{% static 'filesharer.png' %}">
+    <title>FileSharer &mdash; Share files of any size from your browser for free.</title>
+</head>
+
+<body>
+    <div class="app-container">
+        <!-- <div class="left-area">
+            <button class="btn-close-left">
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="feather feather-x-circle" viewBox="0 0 24 24">
+        <defs/>
+        <circle cx="12" cy="12" r="10"/>
+        <path d="M15 9l-6 6M9 9l6 6"/>
+      </svg>
+    </button>
+            <div class="app-name">MyDocs</div>
+            <a href="#" class="item-link active" id="pageLink">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="feather feather-grid" viewBox="0 0 24 24">
+        <defs />
+        <path d="M3 3h7v7H3zM14 3h7v7h-7zM14 14h7v7h-7zM3 14h7v7H3z" />
+      </svg>
+            </a>
+            <a href="#" class="item-link" id="pageLink">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="feather feather-folder" viewBox="0 0 24 24">
+        <defs />
+        <path d="M22 19a2 2 0 01-2 2H4a2 2 0 01-2-2V5a2 2 0 012-2h5l2 3h9a2 2 0 012 2z" />
+      </svg>
+            </a>
+            <a href="#" class="item-link" id="pageLink">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="feather feather-hard-drive" viewBox="0 0 24 24">
+        <defs />
+        <path d="M22 12H2M5.45 5.11L2 12v6a2 2 0 002 2h16a2 2 0 002-2v-6l-3.45-6.89A2 2 0 0016.76 4H7.24a2 2 0 00-1.79 1.11zM6 16h.01M10 16h.01" />
+      </svg>
+            </a>
+            <a href="#" class="item-link" id="pageLink">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="feather feather-settings" viewBox="0 0 24 24">
+        <defs />
+        <circle cx="12" cy="12" r="3" />
+        <path d="M19.4 15a1.65 1.65 0 00.33 1.82l.06.06a2 2 0 010 2.83 2 2 0 01-2.83 0l-.06-.06a1.65 1.65 0 00-1.82-.33 1.65 1.65 0 00-1 1.51V21a2 2 0 01-2 2 2 2 0 01-2-2v-.09A1.65 1.65 0 009 19.4a1.65 1.65 0 00-1.82.33l-.06.06a2 2 0 01-2.83 0 2 2 0 010-2.83l.06-.06a1.65 1.65 0 00.33-1.82 1.65 1.65 0 00-1.51-1H3a2 2 0 01-2-2 2 2 0 012-2h.09A1.65 1.65 0 004.6 9a1.65 1.65 0 00-.33-1.82l-.06-.06a2 2 0 010-2.83 2 2 0 012.83 0l.06.06a1.65 1.65 0 001.82.33H9a1.65 1.65 0 001-1.51V3a2 2 0 012-2 2 2 0 012 2v.09a1.65 1.65 0 001 1.51 1.65 1.65 0 001.82-.33l.06-.06a2 2 0 012.83 0 2 2 0 010 2.83l-.06.06a1.65 1.65 0 00-.33 1.82V9a1.65 1.65 0 001.51 1H21a2 2 0 012 2 2 2 0 01-2 2h-.09a1.65 1.65 0 00-1.51 1z" />
+      </svg>
+            </a>
+            <button class="btn-logout">
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="feather feather-log-out" viewBox="0 0 24 24">
+        <defs/>
+        <path d="M9 21H5a2 2 0 01-2-2V5a2 2 0 012-2h4M16 17l5-5-5-5M21 12H9"/>
+      </svg>
+    </button>
+        </div> -->
+        <div class="main-area">
+            <button class="btn-show-right-area" id="rightsidebutton">
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-left"><polyline points="15 18 9 12 15 6"/></svg>
+    </button>
+            <!-- <button class="btn-show-left-area">
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+    </button> -->
+            <div class="main-area-header">
+                <div class="search-wrapper" id="searchLine" style="padding-left: 1vw;cursor: pointer;">
+                    <input class="search-input" type="text" placeholder="Connection ID" id="connectionid" onkeyup="checkenter(event)">
+                    <svg onclick="getoffer()" id="addconnection" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-person-plus" viewBox="0 0 16 16">
+                        <path d="M6 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0zm4 8c0 1-1 1-1 1H1s-1 0-1-1 1-4 6-4 6 3 6 4zm-1-.004c-.001-.246-.154-.986-.832-1.664C9.516 10.68 8.289 10 6 10c-2.29 0-3.516.68-4.168 1.332-.678.678-.83 1.418-.832 1.664h10z"/>
+                        <path fill-rule="evenodd" d="M13.5 5a.5.5 0 0 1 .5.5V7h1.5a.5.5 0 0 1 0 1H14v1.5a.5.5 0 0 1-1 0V8h-1.5a.5.5 0 0 1 0-1H13V5.5a.5.5 0 0 1 .5-.5z"/>
+                      </svg>
+                </div>
+            </div>
+            <!-- <section class="content-section">
+                <ul class="chat__list-messages">
+                    <li>
+                        <div class="chat__bubble chat__bubble--you">
+                            Hey, I bought something yesterdat but haven't gotten any confirmation. Do you know I if the order went through?
+                        </div>
+                    </li>
+                    <li>
+                        <div class="chat__bubble chat__bubble--me">
+                            Hi! I just checked, your order went through and is on it's way home. Enjoy your new computer! 😃
+                        </div>
+                    </li>
+                </ul>
+            </section> -->
+            <section class="content-section" id="myconnarea">
+                <div class="download-item-line">
+                    <div class="line-header">My Connection ID</div>
+                    <div class="download-area">
+                        <div class="download-item-icon" id="refreshconn" style="padding-top: 1vh; padding-left: 1vw;">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-arrow-clockwise" viewBox="0 0 16 16">
+                                <path fill-rule="evenodd" d="M8 3a5 5 0 1 0 4.546 2.914.5.5 0 0 1 .908-.417A6 6 0 1 1 8 2v1z"/>
+                                <path d="M8 4.466V.534a.25.25 0 0 1 .41-.192l2.36 1.966c.12.1.12.284 0 .384L8.41 4.658A.25.25 0 0 1 8 4.466z"/>
+                              </svg>
+                        </div>
+                        <div class="download-item-texts" style="display: flex; width: 100%; margin-left: 1vw;">
+                            <h1 class="download-text-header" id="myconn">Generating Connection ID...</h1>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- <section class="content-section">
+                <div class="download-item-line">
+                    <div class="line-header">Yesterday</div>
+                    <div class="download-area">
+                        <div class="download-item-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="">
+                <defs></defs>
+                <circle cx="256" cy="256" r="256" fill="#4bc0dd"></circle>
+                <path fill="#f5f5f5" d="M192 64h176c4.4 0 8 3.6 8 8v328c0 4.4-3.6 8-8 8H120c-4.4 0-8-3.6-8-8V148l80-84z"></path>
+                <path fill="#e6e6e6" d="M184 148c4.4 0 8-3.6 8-8V64l-80 84h72z"></path>
+                <circle cx="352" cy="384" r="52" fill="#2179a6"></circle>
+                <g fill="#f5f5f5" class="g">
+                  <path d="M352 416c-2.208 0-4-1.788-4-4v-56c0-2.212 1.792-4 4-4s4 1.788 4 4v56c0 2.212-1.792 4-4 4z"></path>
+                  <path d="M352 416a3.989 3.989 0 01-2.828-1.172l-20-20c-1.564-1.564-1.564-4.092 0-5.656s4.092-1.564 5.656 0L352 406.344l17.172-17.172c1.564-1.564 4.092-1.564 5.656 0s1.564 4.092 0 5.656l-20 20A3.989 3.989 0 01352 416z"></path>
+                </g>
+              </svg>
+                        </div>
+                        <div class="download-item-texts" style="display: flex; width: 100%;">
+                            <p class="download-text-header">Glitter.mp4</p>
+                            <p class="download-text-info">34.45 MB</p>
+                            <div class="progress-bar">
+                                <span class="progress" style="width: 70%;"></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section> -->
+            <section class="content-section" id="fileinputsection">
+            </section>
+            <!-- <section class="content-section">
+                <div class="section-header-wrapper">
+                    <h1 class="section-header">Preview</h1>
+                    <a class="section-header-link">
+           View in folders
+         </a>
+                </div>
+                <div class="content-section-line">
+                    <div class="section-part left">
+                        <a class="image-wrapper">
+                            <div class="image-overlay">
+                                <div class="video-info">
+                                    <div class="video-info-text">
+                                        <p class="video-name medium">Happiness & Tears</p>
+                                        <p class="video-subtext medium">45.5 MB</p>
+                                    </div>
+                                    <button class="btn-play"></button>
+                                </div>
+                            </div>
+                            <img src="https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2251&q=80" />
+                            <span class="video-time">10:32</span>
+                        </a>
+                    </div>
+                    <div class="section-part right">
+                        <div class="content-part-line">
+                            <a class="image-wrapper">
+                                <div class="image-overlay">
+                                    <div class="video-info">
+                                        <div class="video-info-text">
+                                            <p class="video-name tiny">High Hopes</p>
+                                            <p class="video-subtext tiny">50 MB</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <img src="https://images.unsplash.com/photo-1515552726023-7125c8d07fb3?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2167&q=80" />
+                                <span class="video-time">02:35</span>
+                            </a>
+                            <a class="image-wrapper">
+                                <div class="image-overlay">
+                                    <div class="video-info">
+                                        <div class="video-info-text">
+                                            <p class="video-name tiny">Imaginery you</p>
+                                            <p class="video-subtext tiny">210.2 MB</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <img src="https://images.unsplash.com/photo-1542359649-31e03cd4d909?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2167&q=80" />
+                                <span class="video-time">04:15</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section> -->
+            <section class="content-section">
+                <div class="section-header-wrapper">
+                    <h1 class="section-header">Recent Files</h1>
+                    <a class="section-header-link" id="clearst" onclick="clearst()">
+                    </a>
+                </div>
+                <div class="files-table" id="recentfilestable">
+                    <h2 class="download-text-header">No recent file sharing history</h2>
+                    <!-- <div class="files-table-header">
+                        <div class="column-header table-cell">Name</div>
+                        <div class="column-header table-cell size-cell">Size</div>
+                        <div class="column-header table-cell">Last Modified</div>
+                        <div class="column-header table-cell">Action</div>
+                    </div>
+                    <div class="files-table-row">
+                        <div class="table-cell name-cell pdf">Brandenburg.pdf</div>
+                        <div class="table-cell">42 MB</div>
+                        <div class="table-cell">Aug 26, 2020</div>
+                        <div class="table-cell action-cell">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-down-circle" viewBox="0 0 16 16">
+                                <path fill-rule="evenodd" d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8zm15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8.5 4.5a.5.5 0 0 0-1 0v5.793L5.354 8.146a.5.5 0 1 0-.708.708l3 3a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V4.5z"/>
+                              </svg>
+                        </div>
+                    </div>
+                    <div class="files-table-row">
+                        <div class="table-cell name-cell jpg">TheLionsRoar.jpg</div>
+                        <div class="table-cell size-cell">500 KB</div>
+                        <div class="table-cell">Aug 26, 2020</div>
+                        <div class="table-cell action-cell">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-up-circle" viewBox="0 0 16 16">
+                                <path fill-rule="evenodd" d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8zm15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-7.5 3.5a.5.5 0 0 1-1 0V5.707L5.354 7.854a.5.5 0 1 1-.708-.708l3-3a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1-.708.708L8.5 5.707V11.5z"/>
+                              </svg>
+                        </div>
+                    </div> -->
+                </div>
+            </section>
+        </div>
+        <div class="right-area">
+            <button class="btn-close-right">
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="feather feather-x-circle" viewBox="0 0 24 24">
+        <defs/>
+        <circle cx="12" cy="12" r="10"/>
+        <path d="M15 9l-6 6M9 9l6 6"/>
+      </svg>
+    </button>
+            <div class="right-area-header-wrapper">
+                <p class="right-area-header">Downloads</p>
+            </div>
+            <div id="incommingidarea">
+                <h2 class="download-text-header">No pending downloads</h2>
+                <!-- <div class="download-item-line">
+                    <div class="download-area">
+                        <div class="download-item-texts" style="width: 100%;">
+                            <p class="download-text-header">Glitter.mp4</p>
+                            <p class="download-text-info">34.45 MB</p>
+                            <div class="progress-bar">
+                                <span class="progress" style="width: 50%;"></span>
+                            </div>
+                        </div>
+                    </div>
+                </div> -->
+            </div>
+        </div>
+    </div>
+
+    <div class="modal__container" id="modal-container">
+        <div class="modal__content">
+            <div style="display: flex;">
+                <button class="modal__button-link close-modal" id="close_button">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-x-circle" viewBox="0 0 16 16">
+                        <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
+                        <path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z"/>
+                      </svg>
+                </button>&nbsp;&nbsp;&nbsp;
+                <h3 style="margin-top: 6px;">User</h3>&nbsp;&nbsp;
+                <h2 class="download-text-header" id="typingnotify"></h2>
+            </div>
+            <section class="onlychatcontainer" id="poiuytrewq">
+                <ul class="chat__list-messages" id="chatmessages">
+                </ul>
+            </section>
+            <div class="search-wrapper" style="padding-left: 1vw;cursor: pointer;">
+                <input class="search-input" id="message" type="text" placeholder="Type any message..." onkeyup="messagecheckenter(event)">
+                <svg onclick="sendmessage()" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-send" viewBox="0 0 16 16">
+                    <path d="M15.854.146a.5.5 0 0 1 .11.54l-5.819 14.547a.75.75 0 0 1-1.329.124l-3.178-4.995L.643 7.184a.75.75 0 0 1 .124-1.33L15.314.037a.5.5 0 0 1 .54.11ZM6.636 10.07l2.761 4.338L14.13 2.576 6.636 10.07Zm6.787-8.201L1.591 6.602l4.339 2.76 7.494-7.493Z"/>
+                  </svg>
+            </div>
+
+        </div>
+    </div>
+
+    <div id="allinputs" style="display: none;">
+        <input type="file" id="fileinput" onchange="sendthefile('all')">
+        <input type="file" accept="image/*" id="imageinput" onchange="sendthefile('image')">
+        <input type="file" accept="video/mp4,video/x-m4v,video/*" id="videoinput" onchange="sendthefile('video')">
+        <input type="file" accept=".mp3,audio/*" id="audioinput" onchange="sendthefile('audio')">
+        <input type="file" accept="application/msword, application/vnd.ms-excel, application/vnd.ms-powerpoint, text/plain, application/pdf" id="docinput" onchange="sendthefile('doc')">
+    </div>
+
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="{% static 'index.js' %}"></script>
+    <script src="{% static 'share.js' %}"></script>
+    <script src="{% static 'modal/modal.js' %}"></script>
+</body>
+
+</html>
